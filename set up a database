@@ -1,0 +1,17 @@
+yaml
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+Save the file and run the following command to create the development and test databases:
+
+lua
+rails db:create
+Step 4: Create a simple web page
