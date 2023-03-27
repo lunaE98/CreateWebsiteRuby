@@ -1,0 +1,87 @@
+ Let's creating a website with Ruby is a great way to build web applications. In this tutorial, we will use Ruby on Rails, which is a popular web application framework for building dynamic websites.
+
+Here are the steps we'll follow:
+
+Install Ruby and Ruby on Rails
+Create a new Rails application
+Set up a database
+Create a simple web page
+Test the website
+Let's get started!
+
+Step 1: Install Ruby and Ruby on Rails
+
+Before we can create a website with Ruby, we need to install Ruby and Ruby on Rails. You can download Ruby from the official website (https://www.ruby-lang.org/en/downloads/) and Ruby on Rails using the following command:
+
+gem install rails
+Step 2: Create a new Rails application
+
+Once you have Ruby and Ruby on Rails installed, open your terminal and create a new Rails application using the following command:
+
+arduino
+rails new myapp
+This command will create a new Rails application called "myapp" in your current directory.
+
+Step 3: Set up a database
+
+Next, we need to set up a database. By default, Rails uses SQLite for development and testing environments. Open the "config/database.yml" file in your text editor and ensure that the "development" and "test" sections are using SQLite:
+
+yaml
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+Save the file and run the following command to create the development and test databases:
+
+lua
+rails db:create
+Step 4: Create a simple web page
+
+Now we can create a simple web page. Open the "app/views/layouts/application.html.erb" file in your text editor and add the following code:
+
+html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Ruby Website</title>
+  </head>
+  <body>
+    <h1>Welcome to my Ruby website!</h1>
+  </body>
+</html>
+This code creates a simple HTML page with a heading.
+
+Next, create a new controller by running the following command:
+
+rails generate controller pages
+This command will generate a new controller called "PagesController" and a corresponding view file in "app/views/pages/index.html.erb". Open this file in your text editor and add the following code:
+
+html
+<%= render 'layouts/application' %>
+
+<p>This is the homepage of my Ruby website.</p>
+This code renders the "application" layout and adds a paragraph to the page.
+
+Finally, we need to set the root route to the "PagesController#index" action. Open the "config/routes.rb" file in your text editor and add the following code:
+
+ruby
+Rails.application.routes.draw do
+  root 'pages#index'
+end
+This code sets the root route to the "PagesController#index" action.
+
+Step 5: Test the website
+
+Now that we have created our website, we can test it. Save your files and start the Rails server using the following command:
+
+rails server
+This command will start the server on http://localhost:3000. Open your web browser and navigate to this address. You should see the homepage of your Ruby website with the heading "Welcome to my Ruby website!" and the paragraph "This is the homepage of my Ruby website."
+
+And that's it! You've just created a simple website with Ruby on Rails. From here, you can add more functionality to your website.
