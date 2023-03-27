@@ -1,0 +1,2 @@
+html
+<%= render 'layouts/application' %>
